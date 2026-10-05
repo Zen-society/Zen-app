@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Zen — わたしのZen空間',
   description:
     '循環する「Zen」と、積み上がる貢献ポイント「Zen+」。買い物・ミッション・コミュニティ・メタバースがつながる新しい生活プラットフォーム。',
-  generator: 'v0.app',
 }
 
 export const viewport: Viewport = {
@@ -31,7 +30,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans antialiased" style={{ '--font-noto-sans-jp': "'Noto Sans JP', sans-serif", '--font-zen-maru': "'Zen Maru Gothic', sans-serif" } as React.CSSProperties}>
+      <body className="font-sans antialiased">
         {children}
         <Toaster position="top-center" />
       </body>

@@ -1,20 +1,6 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Noto_Sans_JP, Zen_Maru_Gothic } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
-
-const notoSansJP = Noto_Sans_JP({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-noto-sans-jp',
-})
-
-const zenMaru = Zen_Maru_Gothic({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-  variable: '--font-zen-maru',
-})
 
 export const metadata: Metadata = {
   title: 'Zen — わたしのZen空間',
@@ -36,11 +22,18 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ja" className={`light ${notoSansJP.variable} ${zenMaru.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="ja" className="light">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="font-sans antialiased" style={{ '--font-noto-sans-jp': "'Noto Sans JP', sans-serif", '--font-zen-maru': "'Zen Maru Gothic', sans-serif" } as React.CSSProperties}>
         {children}
         <Toaster position="top-center" />
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )

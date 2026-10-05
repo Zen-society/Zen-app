@@ -1,3 +1,0 @@
-{"timestamp":"00:00:03.121","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:06.389","source":"Server","level":"LOG","message":"○ Compiling / ..."}
-{"timestamp":"00:00:08.645","source":"Server","level":"ERROR","message":"(node:38) ExperimentalWarning: WASI is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)"}

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Award, HeartHandshake, Leaf, Loader2, Sprout, Users } from 'lucide-react'
+import { toast } from 'sonner'
 import type { LedgerEvent } from '@/lib/zen/types'
 import {
   getOrCreateDemoUser,
@@ -92,7 +93,7 @@ export function HistoryScreen() {
         ) : (
           <ul className="mt-3 flex flex-col gap-2">
             {events.map((event) => {
-              const isPositive = event.toAccountId || event.eventType === 'ISSUE_ZEN' || event.eventType === 'ISSUE_ZEN_PLUS' || event.eventType === 'MISSION_REWARD'
+              const isPositive = !!event.toAccountId || event.eventType === 'ISSUE_ZEN' || event.eventType === 'ISSUE_ZEN_PLUS' || event.eventType === 'MISSION_REWARD'
               return (
                 <li
                   key={event.id}
@@ -130,5 +131,3 @@ export function HistoryScreen() {
     </div>
   )
 }
-
-import { toast } from 'sonner'

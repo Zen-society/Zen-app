@@ -9,9 +9,9 @@ import {
   getOrCreateAssetAccount,
   getBalanceSummary,
   getReserveBalance,
-  seedDemoData,
   DEMO_USER_ID,
 } from '@/lib/zen/data-access'
+import { seedDemoData } from '@/lib/zen/seed'
 import { formatNumber } from '@/lib/zen-data'
 
 const RING_RADIUS = 30

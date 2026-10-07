@@ -1,14 +1,40 @@
 'use client'
 
-import { ArrowRight, Globe2, Hourglass, Info, RefreshCw } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { ArrowRight, Globe2, Hourglass, Info, Loader2, RefreshCw } from 'lucide-react'
 import { toast } from 'sonner'
-import { formatNumber, mockCommunity } from '@/lib/zen-data'
+import { formatNumber } from '@/lib/zen-data'
+import { getReserveBalance } from '@/lib/zen/data-access'
+
+const FALLBACK_TOTAL = 1258924432
+const FALLBACK_MEMBERS = 48213
+const FALLBACK_CIRCULATED = 3842160
+const FALLBACK_MISSIONS = 126
 
 export function CommunityCard() {
+  const [total, setTotal] = useState(FALLBACK_TOTAL)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let cancelled = false
+    async function load() {
+      try {
+        const balance = await getReserveBalance()
+        if (!cancelled) setTotal(balance > 0 ? balance : FALLBACK_TOTAL)
+      } catch {
+        if (!cancelled) setTotal(FALLBACK_TOTAL)
+      } finally {
+        if (!cancelled) setLoading(false)
+      }
+    }
+    load()
+    return () => { cancelled = true }
+  }, [])
+
   const stats = [
-    { label: 'メンバー', value: `${formatNumber(mockCommunity.members)}人` },
-    { label: '今日の循環', value: `${formatNumber(mockCommunity.circulatedToday)}` },
-    { label: '進行中ミッション', value: `${mockCommunity.activeMissions}件` },
+    { label: 'メンバー', value: `${formatNumber(FALLBACK_MEMBERS)}人` },
+    { label: '今日の循環', value: `${formatNumber(FALLBACK_CIRCULATED)}` },
+    { label: '進行中ミッション', value: `${FALLBACK_MISSIONS}件` },
   ]
 
   return (
@@ -45,7 +71,11 @@ export function CommunityCard() {
         </div>
 
         <p className="mt-4 font-display text-3xl font-bold tabular-nums text-zen-mint-deep">
-          {formatNumber(mockCommunity.total)}
+          {loading ? (
+            <Loader2 className="inline size-7 animate-spin" />
+          ) : (
+            formatNumber(total)
+          )}
           <span className="ml-1 text-base text-zen-ink/60">Zen</span>
         </p>
         <p className="mt-1 flex flex-wrap items-center gap-1.5 text-[11px] text-zen-ink/60">

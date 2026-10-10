@@ -1418,103 +1418,131 @@ video {
 .\[scrollbar-width\:none\] {
   scrollbar-width: none;
 }
+
 .placeholder\:text-zen-ink\/40::-moz-placeholder {
   color: rgb(18 51 46 / 0.4);
 }
+
 .placeholder\:text-zen-ink\/40::placeholder {
   color: rgb(18 51 46 / 0.4);
 }
+
 .focus-within\:ring-2:focus-within {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
+
 .focus-within\:ring-zen-mint:focus-within {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(52 184 146 / var(--tw-ring-opacity, 1));
 }
+
 .hover\:-translate-y-0\.5:hover {
   --tw-translate-y: -0.125rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 .hover\:border-zen-mint:hover {
   --tw-border-opacity: 1;
   border-color: rgb(52 184 146 / var(--tw-border-opacity, 1));
 }
+
 .hover\:bg-accent:hover {
   background-color: hsl(var(--accent));
 }
+
 .hover\:bg-destructive\/90:hover {
   background-color: hsl(var(--destructive) / 0.9);
 }
+
 .hover\:bg-primary\/90:hover {
   background-color: hsl(var(--primary) / 0.9);
 }
+
 .hover\:bg-secondary\/80:hover {
   background-color: hsl(var(--secondary) / 0.8);
 }
+
 .hover\:bg-zen-amber\/20:hover {
   background-color: rgb(233 162 59 / 0.2);
 }
+
 .hover\:bg-zen-mint-deep:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(31 143 112 / var(--tw-bg-opacity, 1));
 }
+
 .hover\:bg-zen-mint-soft:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(227 246 239 / var(--tw-bg-opacity, 1));
 }
+
 .hover\:bg-zen-mint\/20:hover {
   background-color: rgb(52 184 146 / 0.2);
 }
+
 .hover\:text-accent-foreground:hover {
   color: hsl(var(--accent-foreground));
 }
+
 .hover\:text-zen-ink:hover {
   --tw-text-opacity: 1;
   color: rgb(18 51 46 / var(--tw-text-opacity, 1));
 }
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
+
 .hover\:ring-zen-mint:hover {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(52 184 146 / var(--tw-ring-opacity, 1));
 }
+
 .hover\:ring-zen-mint-deep:hover {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(31 143 112 / var(--tw-ring-opacity, 1));
 }
+
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
+
 .focus\:ring-zen-mint:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(52 184 146 / var(--tw-ring-opacity, 1));
 }
+
 .focus-visible\:outline-none:focus-visible {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
+
 .focus-visible\:ring-2:focus-visible {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
+
 .focus-visible\:ring-ring:focus-visible {
   --tw-ring-color: hsl(var(--ring));
 }
+
 .focus-visible\:ring-offset-2:focus-visible {
   --tw-ring-offset-width: 2px;
 }
+
 .disabled\:pointer-events-none:disabled {
   pointer-events: none;
 }
+
 .disabled\:opacity-50:disabled {
   opacity: 0.5;
 }
+
 @media (prefers-reduced-motion: no-preference) {
 
   @keyframes spin {
@@ -1528,19 +1556,23 @@ video {
     animation: spin 12s linear infinite;
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
 
   .motion-reduce\:transition-none {
     transition-property: none;
   }
 }
+
 .\[\&_svg\]\:pointer-events-none svg {
   pointer-events: none;
 }
+
 .\[\&_svg\]\:size-4 svg {
   width: 1rem;
   height: 1rem;
 }
+
 .\[\&_svg\]\:shrink-0 svg {
   flex-shrink: 0;
 }

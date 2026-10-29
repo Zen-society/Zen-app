@@ -208,6 +208,11 @@ CREATE TABLE IF NOT EXISTS zen_reserve_account (
 );
 
 -- =====================================================
+-- === テーブル権限（RLSポリシーの対象ロールと一致させる）===
+GRANT SELECT, INSERT ON zen_users, zen_asset_accounts, zen_ledger_events, zen_lock_records, zen_missions, zen_contributions, zen_transactions, zen_fee_records TO anon, authenticated;
+GRANT SELECT, INSERT, UPDATE ON zen_lots TO anon, authenticated;
+GRANT SELECT ON zen_reserve_account TO anon, authenticated;
+
 -- === RLS 有効化 ===
 -- =====================================================
 ALTER TABLE zen_users ENABLE ROW LEVEL SECURITY;
